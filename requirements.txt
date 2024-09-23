@@ -1,3 +1,10 @@
 fastapi
 pydantic
 uvicorn
+tensorflow
+Pillow
+torch
+torchvision
+torchaudio
+captum
+python-multipart
