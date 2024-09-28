@@ -32,7 +32,7 @@ def allowed_file_extension(filename: str):
     allowed_extensions = {"png", "jpg", "jpeg", "bmp"}
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in allowed_extensions
 
-@app.post("/upload/")
+@app.post("/upload")
 async def upload_file(file: UploadFile = Form(None), email: str = Form(None)):
     if not file:
         raise HTTPException(status_code=400, detail="No file provided.")
@@ -60,7 +60,7 @@ async def upload_file(file: UploadFile = Form(None), email: str = Form(None)):
     return {"class": class_name, "confidence": confidence}
 
 
-@app.post("/explanation/")
+@app.post("/explanation")
 async def explanation_file(email: str = Form(...)):
     user = email.split('@')[0]
     image_path = f"{user}.png"
