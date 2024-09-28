@@ -17,7 +17,7 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 # Allowing CORS for the frontend URL
-origins = ["https://healthcare-app-nine.vercel.app"]
+origins = ["https://healthcare-app-nine.vercel.app/Diagnose"]
 
 app.add_middleware(
     CORSMiddleware,
